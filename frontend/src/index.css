@@ -19,9 +19,9 @@ a {
         "header"
         "main"
         "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: 5rem 1fr 5rem;
-        height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100%;
 }
 
 .header {
@@ -140,7 +140,9 @@ a {
     position: fixed;
     transform: translateX(-30rem);
     width: 30rem;
+    height: 100vh;
     background-color: beige;
+    transition: all .5s;
 }
 
 .sidebar.open {
@@ -149,7 +151,8 @@ a {
 
 .sidebar-close-button {
     transform: translateX(0);
-    border:  .1rem black solid;
+    border: .1rem black solid;
+    border-radius: 50%;
     width: 3rem;
     height: 3rem;
     padding: .5rem;
