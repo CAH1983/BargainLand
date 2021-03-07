@@ -14,6 +14,10 @@
 
                     <a href="index.html"> <img class="logo" src="../Images/Bargain_Land_Logo.png" alt="Bargain land logo">
                     </a>
+
+                    <button class="brand-button" onclick="openMenu()">
+                        &#9776;
+                    </button>
                 </div>
 
                 <div class="header-links">
@@ -23,12 +27,24 @@
                 
             </header>
 
+            <!-- Side menu -->
+            <aside class="sidebar">
+                <h3>Shopping Categories</h3>
+                <button class="sidebar-close-button" onclick="closeMenu()">x</button>
+                <ul>
+                    <li href="index.html">Pants</li>
+                    <li href="">T-shirts</li>
+                    <li></li>
+                </ul>
+            </aside>
+
+            <!-- ------------------ MAIN STARTS HERE------------------  -->
             <main class="main">
                 <div class="content">
                     <ul class="products">
                         <li>
                             <div class="product">
-                                <img class="product-image" src="../Images/d1.JPG" alt="product1">
+                                <img class="product-image" src="../Images/t1.JPG" alt="product1">
                                 <div class="product-name">
                                     <a href="product.html">Slim T-shirt</a>
                                 </div>
@@ -40,7 +56,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img class="product-image" src="../Images/d1.JPG" alt="product1">
+                                <img class="product-image" src="../Images/t2.JPG" alt="product1">
                                 <div class="product-name">
                                     <a href="product.html">Slim T-shirt</a>
                                 </div>
@@ -52,7 +68,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img class="product-image" src="../Images/d1.JPG" alt="product1">
+                                <img class="product-image" src="../Images/t3.JPG" alt="product1">
                                 <div class="product-name">
                                     <a href="product.html">Slim T-shirt</a>
                                 </div>
@@ -64,7 +80,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img class="product-image" src="../Images/d1.JPG" alt="product1">
+                                <img class="product-image" src="../Images/t4.JPG" alt="product1">
                                 <div class="product-name">
                                     <a href="product.html">Slim T-shirt</a>
                                 </div>
@@ -76,7 +92,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img class="product-image" src="../Images/d1.JPG" alt="product1">
+                                <img class="product-image" src="../Images/t5.JPG" alt="product1">
                                 <div class="product-name">
                                     <a href="product.html">Slim T-shirt</a>
                                 </div>
@@ -88,7 +104,7 @@
                         </li>
                         <li>
                             <div class="product">
-                                <img class="product-image" src="../Images/d1.JPG" alt="product1">
+                                <img class="product-image" src="../Images/t6.JPG" alt="product1">
                                 <div class="product-name">
                                     <a href="product.html">Slim T-shirt</a>
                                 </div>
@@ -98,8 +114,6 @@
 
                             </div>
                         </li>
-
-
 
 
 
@@ -109,9 +123,19 @@
             </main>
 
             <footer class="footer">
-                All right reserved.
+                All rights reserved. Caroline Ho ©.
             </footer>
         </div>
+
+        <script>
+            function openMenu() {
+                document.querySelector('.sidebar').classList.add('open');
+            }
+
+            function closeMenu() {
+                document.querySelector(".sidebar").classList.remove('open');
+            }
+        </script>
         
     </body>
 </html>
