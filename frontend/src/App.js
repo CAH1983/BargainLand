@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import React from 'react';
+import data from './data';
 import './App.css';
 
 function App() {
@@ -45,78 +46,21 @@ function App() {
       <main className="main">
         <div className="content">
           <ul className="products">
-            <li>
-              <div className="product">
-                <img className="product-image" src="/Images/t1.JPG" alt="product1" />
-                <div className="product-name">
-                  <a href="product.html">Slim T-shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 stars (10 reviews)</div>
-
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="/Images/t2.JPG" alt="product2" />
-                <div className="product-name">
-                  <a href="product.html">Slim T-shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 stars (10 reviews)</div>
-
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="/Images/t3.JPG" alt="product3" />
-                <div className="product-name">
-                  <a href="product.html">Slim T-shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 stars (10 reviews)</div>
-
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="/Images/t4.JPG" alt="product4" />
-                <div className="product-name">
-                  <a href="product.html">Slim T-shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 stars (10 reviews)</div>
-
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="/Images/t5.JPG" alt="product5" />
-                <div className="product-name">
-                  <a href="product.html">Slim T-shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 stars (10 reviews)</div>
-
-              </div>
-            </li>
-            <li>
-              <div className="product">
-                <img className="product-image" src="/Images/t6.JPG" alt="product6" />
-                <div className="product-name">
-                  <a href="product.html">Slim T-shirt</a>
-                </div>
-                <div className="product-brand">Nike</div>
-                <div className="product-price">$60</div>
-                <div className="product-rating">4.5 stars (10 reviews)</div>
-
-              </div>
-            </li>
+            {
+              data.products.map(product => 
+                <li>
+                  <div className="product">
+                    <img className="product-image" src={product.image} alt="product1" />
+                    <div className="product-name">
+                      <a href="product.html">{product.name}</a>
+                    </div>
+                    <div className="product-brand">{product.brand}</div>
+                    <div className="product-price">${product.price}</div>
+                    <div className="product-rating">{product.rating} stars ({product.numReviews} reviews</div>
+                  </div>
+                </li>)
+            }
+            
           </ul>
         </div>
       </main>
