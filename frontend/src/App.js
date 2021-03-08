@@ -1,6 +1,8 @@
 import React from 'react';
-import data from './data';
+import {BrowserRouter, Link, Route} from 'react-router-dom';
 import './App.css';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 
 function App() {
 
@@ -15,60 +17,53 @@ function App() {
   }
 
   return (
-    <div className="grid-container">
-      <header className="header">
-        <div className="brand">
+    <BrowserRouter>
+   
+      <div className="grid-container">
+        <header className="header">
+          <div className="brand">
 
-          <a href="index.html"> <img className="logo" src="/Images/Bargain_Land_Logo.png" alt="Bargain land logo" />
-          </a>
-          <button className="brand-button" onClick={openMenu}>
-            &#9776;
-                    </button>
-        </div>
-
-        <div className="header-links">
-          <a href="cart.html">Cart</a>
-          <a href="signin.html">Sign In</a>
-        </div>
-
-      </header>
-
-      <aside className="sidebar">
-        <h3>Shopping Categories</h3>
-        <button className="sidebar-close-button" onClick={closeMenu}>x</button>
-        <ul>
-          <li href="index.html">Pants</li>
-          <li href="">T-shirts</li>
-          <li></li>
-        </ul>
-      </aside>
-
-      <main className="main">
-        <div className="content">
-          <ul className="products">
-            {
-              data.products.map(product => 
-                <li>
-                  <div className="product">
-                    <img className="product-image" src={product.image} alt="product1" />
-                    <div className="product-name">
-                      <a href="product.html">{product.name}</a>
-                    </div>
-                    <div className="product-brand">{product.brand}</div>
-                    <div className="product-price">${product.price}</div>
-                    <div className="product-rating">{product.rating} stars ({product.numReviews} reviews</div>
-                  </div>
-                </li>)
-            }
+            <Link to="/"> <img className="logo" src="/Images/Bargain_Land_Logo.png" alt="Bargain land logo" />
+            </Link>
             
-          </ul>
-        </div>
-      </main>
+            <button className="brand-button" onClick={openMenu}>
+              &#9776;
+            </button>
 
-      <footer className="footer">
-        All rights reserved. Caroline Ho ©.
-      </footer>
-    </div>
+          </div>
+
+          <div className="header-links">
+            <a href="cart.html">Cart</a>
+            <a href="signin.html">Sign In</a>
+          </div>
+
+        </header>
+
+        <aside className="sidebar">
+          <h3>Shopping Categories</h3>
+          <button className="sidebar-close-button" onClick={closeMenu}>x</button>
+          <ul>
+            <li href="index.html">Pants</li>
+            <li href="">T-shirts</li>
+            <li></li>
+          </ul>
+        </aside>
+
+        <main className="main">
+          <div className="content">
+
+            <Route path="/product/:id" component={ProductScreen} />
+
+            <Route path="/" exact={true} component={HomeScreen} />
+            
+          </div>
+        </main>
+
+        <footer className="footer">
+          All rights reserved. Caroline Ho ©.
+        </footer>
+      </div>
+    </BrowserRouter>
       
   );
 }

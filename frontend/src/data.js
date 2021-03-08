@@ -1,4 +1,4 @@
-export default {
+const data = {
     products: [{
         name: 'Slim shirt',
         category: 'T-Shirts',
@@ -71,3 +71,5 @@ export default {
     }
     ]
 }
+
+export default data;
